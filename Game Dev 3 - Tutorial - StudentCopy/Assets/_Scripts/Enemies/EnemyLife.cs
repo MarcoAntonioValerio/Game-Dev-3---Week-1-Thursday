@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class EnemyLife : MonoBehaviour
 {
-    //Default life value
-    private int enemyHp = 1;
+    [SerializeField] EnemyData enemyData;
     //Reference to the player firing script
     private PlayerFiring firingScriptRef;
     //Ref to the enemy vfx script
@@ -34,7 +33,7 @@ public class EnemyLife : MonoBehaviour
     public void RemoveHp(int hpToRemove)
     {
         //Destroys the enemyShip if the hit brings it tp 0 or below
-        if ((enemyHp - hpToRemove) <= 0)
+        if ((enemyData.shipHp - hpToRemove) <= 0)
         {
             //You can add a timer to it by putting a comma and a float variable Example:Destroy(gameObject, 0.5f)
             Destroy(gameObject);
@@ -42,7 +41,7 @@ public class EnemyLife : MonoBehaviour
         else
         {
             //Removes the required hp
-            enemyHp -= hpToRemove;
+            enemyData.shipHp -= hpToRemove;
         }
     }
 
