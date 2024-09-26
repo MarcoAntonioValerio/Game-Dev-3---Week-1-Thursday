@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyLife : MonoBehaviour
 {
-    [SerializeField] EnemyData enemyData;
+    public EnemyData enemyData;
     //Reference to the player firing script
     private PlayerFiring firingScriptRef;
     //Ref to the enemy vfx script
