@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {    
-    //Default move value
-    private float movementSpeed = 1f;
+    [SerializeField] EnemyData enemyData;
 
     private void FixedUpdate()
     {
@@ -21,7 +20,7 @@ public class EnemyMovement : MonoBehaviour
         //To store the position before the movement
         Vector2 pos = transform.position;
         //To move the ship down
-        pos.y -= movementSpeed * Time.fixedDeltaTime;
+        pos.y -= enemyData.shipSpeed * Time.fixedDeltaTime;
         //To actually move the ship
         transform.position = pos;
     }
