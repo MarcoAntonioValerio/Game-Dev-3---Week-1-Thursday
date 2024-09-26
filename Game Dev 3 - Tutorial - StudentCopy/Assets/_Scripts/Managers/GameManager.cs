@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,10 +8,13 @@ public class GameManager : MonoBehaviour
     //For example, do not use static for the enemyHp variable, since there would be more than on!
     public static bool isGameOn = false;
 
+    public UnityEvent gameHasStarted;
+
 
     public void GameIsOn()
     {
         isGameOn = true;
+        gameHasStarted.Invoke();
     }
 
     public void GameIsOff()
